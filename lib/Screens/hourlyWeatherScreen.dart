@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-
 import '../helper/utils.dart';
 import '../provider/weatherProvider.dart';
 
@@ -52,6 +51,7 @@ class HourlyScreen extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.transparent,

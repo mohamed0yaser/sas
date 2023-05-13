@@ -28,7 +28,7 @@ class WeatherProvider with ChangeNotifier {
     isLocationError = false;
     if (isRefresh) notifyListeners();
     await Location().requestService().then(
-      (value) async {
+          (value) async {
         if (value) {
           final locData = await Location().getLocation();
           currentLocation = LatLng(locData.latitude!, locData.longitude!);

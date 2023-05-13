@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:sas/Screens/weather.dart';
-import 'package:provider/provider.dart';
-import './provider/weatherProvider.dart';
-import 'package:sas/Screens/hourlyWeatherScreen.dart';
-import 'package:sas/Screens/weeklyWeatherScreen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+import 'package:sas/Screens/landing_page.dart';
 import 'package:sas/app_color.dart';
-import 'package:sas/home/home_tap.dart';
 import 'package:sas/home_screen.dart';
+import 'package:sas/provider/weatherProvider.dart';
+import 'package:sas/register/managers/login_cubit.dart';
+import 'package:sas/register/managers/signup_cubit.dart';
+import 'package:sas/screens/hourlyWeatherScreen.dart';
+import 'package:sas/screens/weeklyWeatherScreen.dart';
 import 'package:sas/splash.dart';
-import 'package:sas/start/add_field.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => WeatherProvider(),
+      child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -19,36 +23,27 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ChangeNotifierProvider(
-      create: (context) => WeatherProvider(),
-      child: MaterialApp(
-        title: 'la via',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          appBarTheme: AppBarTheme(
-            iconTheme: IconThemeData(
-              color: Colors.blue,
-            ),
-            elevation: 0,
-          ),
-          scaffoldBackgroundColor: Colors.white,
-          primaryColor: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          colorScheme:
-              ColorScheme.fromSwatch().copyWith(secondary: Colors.white),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => SignupCubit(),
         ),
-        home: HomeScreen(),
+        BlocProvider(
+          create: (context) => LoginCubit(),
+        ),
+      ],
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: AppColor.lightTheme,
+        title: 'La Via',
+        home: LandingPage(),
         routes: {
           Splash.routeName: (buildContext) => const Splash(),
           HomeScreen.routeName: (buildContext) => const HomeScreen(),
-          AddField.routeName: (buildContext) => const AddField(),
-          HomeTap.routeName: (buildContext) => const HomeTap(),
           WeeklyScreen.routeName: (myCtx) => WeeklyScreen(),
           HourlyScreen.routeName: (myCtx) => HourlyScreen(),
         },
       ),
     );
-  
-    
-    }
+  }
 }

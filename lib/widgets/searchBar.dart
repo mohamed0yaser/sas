@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sas/app_color.dart';
 import 'package:provider/provider.dart';
 
 import '../provider/weatherProvider.dart';
@@ -45,7 +46,7 @@ class _SearchBarState extends State<SearchBar> {
                 padding: const EdgeInsets.only(left: 10),
                 child: Icon(
                   Icons.search,
-                  color: Colors.blue,
+                  color: AppColor.colorGreen,
                 ),
               ),
               contentPadding: EdgeInsets.only(
@@ -61,7 +62,7 @@ class _SearchBarState extends State<SearchBar> {
                 _textController.text.isEmpty
                     ? _validate = true
                     : Provider.of<WeatherProvider>(context, listen: false)
-                        .searchWeather(location: value);
+                    .searchWeather(location: value);
               });
             },
           ),

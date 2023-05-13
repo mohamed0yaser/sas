@@ -28,23 +28,26 @@ class AuthPage extends StatelessWidget {
                children: [
                  SizedBox(height: size.height * 0.15),
                  Center(child: Image.asset("images/loogo.png")),
-                  TabBar(
-                    labelColor: AppColor.colorGreen,
-                    unselectedLabelColor: Colors.grey,
-                   labelStyle:
-                   const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                   indicator: UnderlineTabIndicator(
-                    borderSide: const BorderSide(
-                      width: 3,
-                      color: AppColor.colorGreen,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 70),
+                    child: TabBar(
+                      labelColor: AppColor.colorGreen,
+                      unselectedLabelColor: Colors.grey,
+                     labelStyle:
+                     const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                     indicator: UnderlineTabIndicator(
+                      borderSide: const BorderSide(
+                        width: 3,
+                        color: AppColor.colorGreen,
+                       ),
+                       insets: EdgeInsets.symmetric(horizontal:size.width * 0.15),
                      ),
-                     insets: EdgeInsets.symmetric(horizontal:size.width * 0.15),
-                   ),
-                  tabs: const [
-                     Tab(icon: Text('Sign Up')),
-                     Tab(icon: Text('Login'))
-                  ],
+                    tabs: const [
+                       Tab(icon: Text('Sign Up')),
+                       Tab(icon: Text('Login'))
+                    ],
                 ),
+                  ),
                  const Expanded(
                    child: TabBarView(
                     children: [

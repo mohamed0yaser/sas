@@ -82,10 +82,10 @@ class MapString {
   }
 
   static Icon mapStringToIcon(
-    BuildContext context,
-    String input,
-    double iconSize,
-  ) {
+      BuildContext context,
+      String input,
+      double iconSize,
+      ) {
     IconData icon;
     switch (input) {
       case 'Thunderstorm':

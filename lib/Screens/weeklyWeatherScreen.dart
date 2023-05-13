@@ -40,7 +40,7 @@ class WeeklyScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 15, bottom: 15),
                 child:
-                    MapString.mapStringToIcon(context, weather.condition, 25),
+                MapString.mapStringToIcon(context, weather.condition, 25),
               ),
             ],
           ),

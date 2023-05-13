@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sas/app_color.dart';
 import 'package:sas/provider/weatherProvider.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
@@ -16,10 +17,11 @@ class WeatherDetail extends StatelessWidget {
           children: [
             Icon(
               icon,
-              color: Colors.blue,
+              color: AppColor.colorGreen,
               size: 35,
             ),
-            const SizedBox(width: 15.0),
+            Spacer(),
+            //const SizedBox(width: 15.0),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,

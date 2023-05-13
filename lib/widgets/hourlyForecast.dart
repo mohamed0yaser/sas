@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sas/provider/weatherProvider.dart';
 import 'package:intl/intl.dart';
+import 'package:sas/app_color.dart';
 import 'package:provider/provider.dart';
-
+import '../provider/weatherProvider.dart';
 import '../screens/hourlyWeatherScreen.dart';
 import '../helper/utils.dart';
 
@@ -80,7 +80,7 @@ class HourlyForecast extends StatelessWidget {
               TextButton(
                 child: Text(
                   'See More',
-                  style: TextStyle(color: Colors.blue),
+                  style: TextStyle(color: AppColor.colorGreen),
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(HourlyScreen.routeName);

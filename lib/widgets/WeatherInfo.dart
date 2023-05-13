@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sas/app_color.dart';
 import 'package:sas/provider/weatherProvider.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +18,7 @@ class WeatherInfo extends StatelessWidget {
       children: [
         Icon(
           icon,
-          color: Colors.blue,
+          color: AppColor.colorGreen,
           size: iconSize ?? 40,
         ),
         const SizedBox(width: 16.0),

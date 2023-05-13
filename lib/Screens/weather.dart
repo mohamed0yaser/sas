@@ -11,7 +11,7 @@ import '../widgets/mainWeather.dart';
 import '../widgets/requestError.dart';
 import '../widgets/searchBar.dart';
 import '../widgets/weatherDetail.dart';
-import '../widgets/sevenDayForecast.dart';
+import 'package:sas/widgets/sevenDayForecast..dart';
 
 class Weather extends StatefulWidget {
   static const routeName = '/weather';
