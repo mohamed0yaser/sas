@@ -67,7 +67,7 @@ class _CameraPageState extends State<CameraPage> {
             context,
             MaterialPageRoute(
                 builder: (context) => PreviewPage(
-                      picture: picture,
+                      picture: imagePaths,
                     )));
       
       //final String path = await getApplicationDocumentsDirectory().toString();
